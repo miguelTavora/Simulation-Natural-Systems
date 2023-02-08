@@ -1,0 +1,312 @@
+<InsightMakerModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Setting Note="" Version="36" TimeLength="200" TimeStart="0" TimeStep="1" TimeUnits="Years" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+      <mxCell parent="1" vertex="1" visible="0">
+        <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Setting>
+    <Display name="Default Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="55,56" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="None" id="3">
+      <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+        <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Stock name="Capital" Note="" InitialValue="200" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="55">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="700" y="170" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Stock name="Resouce" Note="" InitialValue="500" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="56">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="680" y="570" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Variable name="fraction of expenses" Note="" Equation="0.3" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="57">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="680" y="380" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Boat price" Note="" Equation="200" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="58">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="1020" y="380" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="capital lifetime" Note="" Equation="20\n" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="59">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="1000" y="250" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="fishing boats" Note="" Equation="[Capital]/[Boat price]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="60">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="810" y="330" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="expenses" Note="" Equation="[Capital]*[fraction of expenses]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="61">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="620" y="280" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="profit" Note="" Equation="[Fishing]*[fish price]-[expenses]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="62">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="440" y="350" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="income" Note="" Equation="[profit]-[investment]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="63">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="310" y="225" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="investment goal" Note="" Equation="[Capital]*[Ambition]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="64">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="560" y="60" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Ambition" Note="" Equation="0.1" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="65">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="890" y="60" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Carrying Capacity " Note="" Equation="1000" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="66">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="870" y="710" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="relative density" Note="" Equation="[Resouce]/[Carrying Capacity ]" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="67">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="670" y="720" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Regeneration rate" Note="" Equation="0.5" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="68">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="490" y="700" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Flow name="regeneration" Note="" FlowRate="[Regeneration rate]*[Resouce]*(1-[relative density])" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="69">
+      <mxCell edge="1" parent="1" target="56">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="480" y="590" as="sourcePoint"/>
+          <mxPoint y="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Flow name="Fishing" Note="" FlowRate="[yield per boat]*[fishing boats]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="70">
+      <mxCell style="flow" edge="1" parent="1" source="56">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="1010" y="590.0105448925602" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="71">
+      <mxCell style="link" edge="1" parent="1" source="68" target="69">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="73">
+      <mxCell style="link" edge="1" parent="1" source="67" target="69">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="74">
+      <mxCell style="link" edge="1" parent="1" source="56" target="67">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="75">
+      <mxCell style="link" edge="1" parent="1" source="66" target="67">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Flow name="depreciation" Note="" FlowRate="[Capital]/[capital lifetime]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="76">
+      <mxCell edge="1" parent="1" source="55">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="1000" y="190.0000340675839" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Flow name="investment" Note="" FlowRate="MIN([investment goal],[profit])" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="77">
+      <mxCell style="flow" edge="1" parent="1" target="55">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="490" y="189.99736983325838" as="sourcePoint"/>
+          <mxPoint y="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="78">
+      <mxCell style="link" edge="1" parent="1" source="65" target="64">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="79">
+      <mxCell style="link" edge="1" parent="1" source="64" target="77">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="80">
+      <mxCell style="link" edge="1" parent="1" source="55" target="64">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="81">
+      <mxCell style="link" edge="1" parent="1" source="77" target="63">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="82">
+      <mxCell style="link" edge="1" parent="1" source="62" target="77">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="590" y="190" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="83">
+      <mxCell style="link" edge="1" parent="1" source="62" target="63">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="84">
+      <mxCell style="link" edge="1" parent="1" source="55" target="61">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="85">
+      <mxCell style="link" edge="1" parent="1" source="61" target="62">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="86">
+      <mxCell style="link" edge="1" parent="1" source="55" target="60">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="87">
+      <mxCell style="link" edge="1" parent="1" source="55" target="76">
+        <mxGeometry x="-26" y="59" width="100" height="100" as="geometry">
+          <mxPoint x="-26" y="159" as="sourcePoint"/>
+          <mxPoint x="874" y="329" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="88">
+      <mxCell style="link" edge="1" parent="1" source="59" target="76">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="910" y="180" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="89">
+      <mxCell style="link" edge="1" parent="1" source="58" target="60">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="90">
+      <mxCell style="link" edge="1" parent="1" source="57" target="61">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Converter name="fish price" Note="" Source="92" Data="0,100; 4,20; 14,10" Interpolation="Linear" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="91">
+      <mxCell style="converter" vertex="1" parent="1">
+        <mxGeometry x="310" y="480" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Converter>
+    <Converter name="yield per boat" Note="" Source="56" Data="0,0; 200,1; 600,10; 1000,10" Interpolation="Linear" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="92">
+      <mxCell style="converter" vertex="1" parent="1">
+        <mxGeometry x="500" y="470" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Converter>
+    <Link name="Link" Note="" BiDirectional="false" id="93">
+      <mxCell style="link" edge="1" parent="1" source="91" target="62">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="94">
+      <mxCell style="link" edge="1" parent="1" source="56" target="92">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="95">
+      <mxCell style="link" edge="1" parent="1" source="92" target="70">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="96">
+      <mxCell style="link" edge="1" parent="1" source="60" target="70">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="97">
+      <mxCell style="link" edge="1" parent="1" source="70" target="62">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="98">
+      <mxCell style="link" edge="1" parent="1" source="92" target="91">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+  </root>
+</InsightMakerModel>

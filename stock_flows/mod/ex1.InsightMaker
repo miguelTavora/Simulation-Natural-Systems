@@ -1,0 +1,109 @@
+<InsightMakerModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Display name="Default Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="55" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="None" id="3">
+      <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+        <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Setting Note="" Version="36" TimeLength="5" TimeStart="0" TimeStep="1" TimeUnits="Years" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+      <mxCell parent="1" vertex="1" visible="0">
+        <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Setting>
+    <Stock name="População" Note="" InitialValue="101" StockMode="Store" Delay="5" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" AllowNegatives="true" id="55">
+      <mxCell style="stock" parent="1" vertex="1">
+        <mxGeometry x="700" y="210" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Variable name="Taxa natalidade" Note="" Equation="0.04" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="56">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="490" y="25" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Taxa mortalidade" Note="" Equation="0.02" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="57">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="840" y="25" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="59">
+      <mxCell style="link" parent="1" source="56" target="71" edge="1">
+        <mxGeometry x="433" y="113" width="100" height="100" as="geometry">
+          <mxPoint x="433" y="213" as="sourcePoint"/>
+          <mxPoint x="636" y="241" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="60">
+      <mxCell style="link" parent="1" source="57" target="74" edge="1">
+        <mxGeometry x="589" y="53" width="100" height="100" as="geometry">
+          <mxPoint x="589" y="153" as="sourcePoint"/>
+          <mxPoint x="848" y="181" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="Emigrações" Note="" Equation="10" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="63">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="840" y="450" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Imigrações" Note="" Equation="8" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="64">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="460" y="421" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="65">
+      <mxCell style="link" parent="1" source="64" target="71" edge="1">
+        <mxGeometry x="390" y="66" width="100" height="100" as="geometry">
+          <mxPoint x="390" y="166" as="sourcePoint"/>
+          <mxPoint x="593" y="345" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Flow name="Entrada População" Note="" FlowRate="[População]*[Taxa natalidade]+[Imigrações]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="71">
+      <mxCell parent="1" target="55" edge="1">
+        <mxGeometry x="-100" width="100" height="100" as="geometry">
+          <mxPoint x="550" y="230" as="sourcePoint"/>
+          <mxPoint x="-100" y="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Display name="New Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="" yAxis2="" showMarkers="false" showLines="true" showArea="false" ThreeDimensional="false" Primitives="" Primitives2="" AutoAddPrimitives="false" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" legendPosition="Automatic" id="72">
+      <mxCell style="display" parent="1" vertex="1" visible="0">
+        <mxGeometry x="10" y="10" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Display name="New Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="" yAxis2="" showMarkers="false" showLines="true" showArea="false" ThreeDimensional="false" Primitives="" Primitives2="" AutoAddPrimitives="false" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" legendPosition="Automatic" id="73">
+      <mxCell style="display" parent="1" vertex="1" visible="0">
+        <mxGeometry x="10" y="10" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Flow name="Saida População" Note="" FlowRate="[População]*[Taxa mortalidade]+[Emigrações]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="74">
+      <mxCell style="flow" edge="1" parent="1" source="55">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="980" y="230" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="75">
+      <mxCell style="link" edge="1" parent="1" source="63" target="74">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Display name="New Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="" yAxis2="" showMarkers="false" showLines="true" showArea="false" ThreeDimensional="false" Primitives="" Primitives2="" AutoAddPrimitives="false" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" legendPosition="Automatic" id="76">
+      <mxCell style="display" vertex="1" parent="1" visible="0">
+        <mxGeometry x="10" y="10" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Display name="New Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="" yAxis2="" showMarkers="false" showLines="true" showArea="false" ThreeDimensional="false" Primitives="" Primitives2="" AutoAddPrimitives="false" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" FlipHorizontal="false" FlipVertical="false" LabelPosition="Bottom" legendPosition="Automatic" id="77">
+      <mxCell style="display" vertex="1" parent="1" visible="0">
+        <mxGeometry x="10" y="10" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+  </root>
+</InsightMakerModel>

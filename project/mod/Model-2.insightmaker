@@ -1,0 +1,283 @@
+<InsightMakerModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Setting Note="" Version="36" TimeLength="20" TimeStart="0" TimeStep="1" TimeUnits="Years" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+      <mxCell parent="1" vertex="1" visible="0">
+        <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Setting>
+    <Display name="Default Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="69,78,90,95,100,101,102,107,108" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="None" id="3">
+      <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+        <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Variable name="Taxa de acidentes Blue com Blue" Note="" Equation="0.2" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="63">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="300" y="80" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Taxa de acidentes Blue com Red" Note="" Equation="0.1" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="65">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="710" y="80" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Taxa de acidentes Red com Green" Note="" Equation="0.01" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="67">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="490" y="60" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Taxa de acidentes Blue com Green" Note="" Equation="0.01" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="68">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="900" y="85" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Stock name="Blue" Note="" InitialValue="1" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="69">
+      <mxCell style="stock" parent="1" vertex="1">
+        <mxGeometry x="480" y="270" width="90" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Variable name="Gera Blue" Note="" Equation="1" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="70">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="170" y="210" width="130" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Flow name="Flow" Note="" FlowRate="[Blue]*[Gera Blue]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="72">
+      <mxCell style="flow" parent="1" target="69" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="370" y="290.00001139776714" as="sourcePoint"/>
+          <mxPoint y="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Flow name="Flow" Note="" FlowRate="[Blue]*[Taxa de acidentes Blue com Blue]*[Taxa de acidentes Blue com Red]*[Taxa de acidentes Blue com Green]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="73">
+      <mxCell style="flow" parent="1" source="69" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="670" y="290" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="74">
+      <mxCell style="link" parent="1" source="70" target="72" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="75">
+      <mxCell style="link" parent="1" source="63" target="73" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="76">
+      <mxCell style="link" parent="1" source="65" target="73" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="77">
+      <mxCell style="link" parent="1" source="68" target="73" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Stock name="Red" Note="" InitialValue="1" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="78">
+      <mxCell style="stock" parent="1" vertex="1">
+        <mxGeometry x="870" y="270" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Flow" Note="" FlowRate="[Red]*[Gera Red]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="79">
+      <mxCell style="flow" parent="1" target="78" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="760" y="286.875" as="sourcePoint"/>
+          <mxPoint y="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Variable name="Gera Red" Note="" Equation="1" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="80">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="1100" y="150" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="81">
+      <mxCell style="link" parent="1" source="80" target="79" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Flow name="Flow" Note="" FlowRate="[Red]*[Taxa de acidentes Blue com Red]*[Taxa de acidentes Red com Green]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="86">
+      <mxCell style="flow" parent="1" source="78" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="1080" y="290" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="87">
+      <mxCell style="link" parent="1" source="67" target="86" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="89">
+      <mxCell style="link" parent="1" source="65" target="86" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Stock name="Green" Note="" InitialValue="1" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="90">
+      <mxCell style="stock" parent="1" vertex="1">
+        <mxGeometry x="650" y="400" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Flow" Note="" FlowRate="[Green]*[Gera Green]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="93">
+      <mxCell style="flow" parent="1" target="90" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="540" y="420" as="sourcePoint"/>
+          <mxPoint y="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Flow name="Flow" Note="" FlowRate="[Green]*[Taxa de acidentes Red com Green]*[Taxa de acidentes Blue com Green]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="94">
+      <mxCell style="flow" parent="1" source="90" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="850" y="420" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Variable name="Gera Green" Note="" Equation="0" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="95">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="190" y="400" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="96">
+      <mxCell style="link" parent="1" source="95" target="93" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="98">
+      <mxCell style="link" parent="1" source="67" target="94" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="99">
+      <mxCell style="link" parent="1" source="68" target="94" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Stock name="Purple" Note="" InitialValue="1" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="100">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="600" y="580" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Variable name="Taxa de acidentes purple com yellow" Note="" Equation="0.001" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="101">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="820" y="480" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Variable name="Gera Purple" Note="" Equation="1" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="102">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="310" y="650" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Flow name="Flow" Note="" FlowRate="[Purple]*[Gera Purple]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="103">
+      <mxCell style="flow" edge="1" parent="1" target="100">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="500" y="600.0000002683297" as="sourcePoint"/>
+          <mxPoint y="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Flow name="Flow" Note="" FlowRate="[Purple]*[Taxa de acidentes purple com yellow]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="104">
+      <mxCell style="flow" edge="1" parent="1" source="100">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="820" y="600.0748314795081" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="105">
+      <mxCell style="link" edge="1" parent="1" source="102" target="103">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="106">
+      <mxCell style="link" edge="1" parent="1" source="101" target="104">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Stock name="yellow" Note="" InitialValue="1" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="107">
+      <mxCell style="stock" vertex="1" parent="1">
+        <mxGeometry x="570" y="675" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Variable name="Gera Yellow" Note="" Equation="1" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="108">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="420" y="770" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Flow name="Flow" Note="" FlowRate="[yellow]*[Gera Yellow]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="109">
+      <mxCell style="flow" edge="1" parent="1" target="107">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="490" y="695.000403180556" as="sourcePoint"/>
+          <mxPoint y="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Flow name="Flow" Note="" FlowRate="[yellow]*[Taxa de acidentes purple com yellow]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="110">
+      <mxCell style="flow" edge="1" parent="1" source="107">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="750" y="695" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="111">
+      <mxCell style="link" edge="1" parent="1" source="108" target="109">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="112">
+      <mxCell style="link" edge="1" parent="1" source="101" target="110">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+  </root>
+</InsightMakerModel>

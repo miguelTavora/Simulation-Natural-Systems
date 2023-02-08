@@ -1,0 +1,139 @@
+<InsightMakerModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <Setting Note="" Version="36" TimeLength="200" TimeStart="0" TimeStep="1" TimeUnits="Years" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="-1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+      <mxCell parent="1" vertex="1" visible="0">
+        <mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Setting>
+    <Display name="Default Display" Note="" Type="Scatterplot" xAxis="%o" yAxis="%o" ThreeDimensional="false" Primitives="55,62" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="true" showLines="false" showArea="false" legendPosition="None" id="3">
+      <mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+        <mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+      </mxCell>
+    </Display>
+    <Stock name="Presas" Note="" InitialValue="10" StockMode="Store" Delay="10" Volume="100" NonNegative="true" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" AllowNegatives="false" id="55">
+      <mxCell style="stock" parent="1" vertex="1">
+        <mxGeometry x="480" y="140" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Variable name="nata presas" Note="" Equation="0.1" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="56">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="240" y="80" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Flow name="Flow" Note="" FlowRate="[Presas]*[nata presas]*(1-[Presas]/[carga])" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="57">
+      <mxCell style="flow" parent="1" target="55" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint x="330" y="159.9716396484717" as="sourcePoint"/>
+          <mxPoint y="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="58">
+      <mxCell style="link" parent="1" source="56" target="57" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Flow name="Flow" Note="" FlowRate="[morta presas]*[Predadores]*[Presas]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="60">
+      <mxCell style="flow" parent="1" source="55" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="730" y="170" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Variable name="nata predadores" Note="" Equation="0.02" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="61">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="250" y="430" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Stock name="Predadores" Note="" InitialValue="10" StockMode="Store" Delay="10" Volume="100" NonNegative="true" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" AllowNegatives="false" id="62">
+      <mxCell style="stock" parent="1" vertex="1">
+        <mxGeometry x="480" y="340" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </Stock>
+    <Flow name="Flow" Note="" FlowRate="[morta preda]*[Predadores]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="63">
+      <mxCell style="flow" parent="1" source="62" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="810" y="355" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Flow name="Flow" Note="" FlowRate="[nata predadores]*[Predadores]*[Presas]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="64">
+      <mxCell style="flow" parent="1" target="62" edge="1">
+        <mxGeometry x="-140" y="3" width="100" height="100" as="geometry">
+          <mxPoint x="390" y="360" as="sourcePoint"/>
+          <mxPoint x="-140" y="103" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Flow>
+    <Link name="Link" Note="" BiDirectional="false" id="65">
+      <mxCell style="link" parent="1" source="55" target="64" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="66">
+      <mxCell style="link" parent="1" source="61" target="64" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="morta presas" Note="" Equation="0.02" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="67">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="690" y="40" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="68">
+      <mxCell style="link" parent="1" source="67" target="60" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Link name="Link" Note="" BiDirectional="false" id="69">
+      <mxCell style="link" parent="1" source="62" target="60" edge="1">
+        <mxGeometry x="-25" y="-7" width="100" height="100" as="geometry">
+          <mxPoint x="-25" y="93" as="sourcePoint"/>
+          <mxPoint x="75" y="-7" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="morta preda" Note="" Equation="0.4" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="70">
+      <mxCell style="variable" parent="1" vertex="1">
+        <mxGeometry x="840" y="440" width="120" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="71">
+      <mxCell style="link" parent="1" source="70" target="63" edge="1">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+    <Variable name="carga" Note="" Equation="100" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="74">
+      <mxCell style="variable" vertex="1" parent="1">
+        <mxGeometry x="150" y="230" width="130" height="50" as="geometry"/>
+      </mxCell>
+    </Variable>
+    <Link name="Link" Note="" BiDirectional="false" id="75">
+      <mxCell style="link" edge="1" parent="1" source="74" target="57">
+        <mxGeometry width="100" height="100" as="geometry">
+          <mxPoint y="100" as="sourcePoint"/>
+          <mxPoint x="100" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Link>
+  </root>
+</InsightMakerModel>
